@@ -28,11 +28,14 @@ Empty values are skipped, so you can leave placeholders in the file without acci
 # Push to a specific repo
 ./push-secrets.sh --repo owner/repo
 
-# Use a different secrets file
-./push-secrets.sh --secrets-file ~/secrets/myproject.secrets
+# Merge multiple files — later files win on duplicate keys
+./push-secrets.sh --secrets-file ~/secrets/common.secrets --secrets-file .secrets
 
-# Combine
-./push-secrets.sh --repo owner/new-project --secrets-file ~/secrets/myproject.secrets
+# Full example: shared infra keys + repo-specific keys → new project
+./push-secrets.sh \
+  --repo owner/new-project \
+  --secrets-file ~/secrets/common.secrets \
+  --secrets-file .secrets
 ```
 
 ### Setup for a project
