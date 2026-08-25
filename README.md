@@ -40,7 +40,7 @@ Empty values are skipped, so you can leave placeholders in the file without acci
 
 ### Setup for a project
 
-1. Copy the project's `.secrets.example` to `.secrets` and fill in values.
+1. Copy `.secrets.example` (or your project's own example) to `.secrets` and fill in values.
 2. Make sure `.secrets` is in your `.gitignore`.
 3. Run the script.
 
